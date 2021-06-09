@@ -1,0 +1,38 @@
+<app-navbar [pageName]="'Add Movie'"></app-navbar>
+<ion-content>
+  <div>
+    <form>
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="movie.name" name="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Director</ion-label>
+        <ion-input type="text" [(ngModel)]="movie.director" name="director"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Release</ion-label>
+        <ion-input type="text" [(ngModel)]="movie.release" name="release"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Rating</ion-label>
+        <ion-input type="text" [(ngModel)]="movie.rating" name="rating"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea [(ngModel)]="movie.description" name="description"></ion-textarea>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label>Watched</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="movie.watched" name="watched">
+          <ion-select-option [value]="true">Yes</ion-select-option>
+          <ion-select-option [value]="false">No</ion-select-option>
+        </ion-select>
+      </ion-item> -->
+    </form>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" (click)="addMovie()">Add Movie</ion-button>
+  <ion-button expand="block" [routerLink]="'/movies'">Back to Movie</ion-button>
+</ion-footer>

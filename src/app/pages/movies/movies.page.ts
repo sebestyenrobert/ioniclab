@@ -1,4 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+import { Movie } from 'src/app/models/movie.model';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-movies',
@@ -8,6 +11,18 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 
 export class MoviesPage {
+  movies: Movie[];
 
+  constructor(private apiSvc: ApiService, private router: Router) {}
+
+  ionViewWillEnter() {
+    this.apiSvc.get('api/movie').subscribe((response: Array<Movie>) => {
+      this.movies = response;
+    });
+  }
+
+  goToAddProduct() {
+    this.router.navigateByUrl('movies/add');
+  }
 }
 

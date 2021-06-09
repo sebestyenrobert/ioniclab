@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: 'navbar.component.html'
 })
 
-export class NavbarComponent {}
+export class NavbarComponent {
+  @Input() pageName: string;
+}
