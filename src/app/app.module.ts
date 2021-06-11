@@ -14,9 +14,11 @@ import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddMoviePage } from './pages/add.movie/add.movie.page';
 import { FormsModule } from '@angular/forms';
+import { EditMoviePage } from './pages/edit.movie/edit.movie.page';
+import { DetailMoviePage } from './pages/detail.movie/detail.movie.page';
 
 @NgModule({
-  declarations: [AppComponent, LoginPage, MoviesPage, SideMenuComponent, NavbarComponent, AddMoviePage],
+  declarations: [AppComponent, LoginPage, MoviesPage, SideMenuComponent, NavbarComponent, AddMoviePage, EditMoviePage, DetailMoviePage],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ApiService],

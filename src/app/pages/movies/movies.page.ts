@@ -16,13 +16,33 @@ export class MoviesPage {
   constructor(private apiSvc: ApiService, private router: Router) {}
 
   ionViewWillEnter() {
-    this.apiSvc.get('api/movie').subscribe((response: Array<Movie>) => {
-      this.movies = response;
+    this.loadMovies();
+  }
+
+  goToAddMovie() {
+    this.router.navigateByUrl('movies/add');
+  }
+
+  deleteMovie(movie: Movie) {
+    this.apiSvc.delete(`api/Movie/${movie.id}`).subscribe(() => {
+      this.loadMovies();
     });
   }
 
-  goToAddProduct() {
-    this.router.navigateByUrl('movies/add');
+  goToEditMovie(movie: Movie) {
+    this.router.navigateByUrl(`movie/edit/${movie.id}`);
+  }
+
+  goToMovieDetails(movie: Movie) {
+    this.router.navigateByUrl(`movie/${movie.id}`);
+  }
+
+  detailMovie(movie: Movie) {}
+
+  private loadMovies() {
+    this.apiSvc.get('api/movie').subscribe((response: Array<Movie>) => {
+      this.movies = response;
+    });
   }
 }
 

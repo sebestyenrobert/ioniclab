@@ -2,8 +2,8 @@ export class Movie {
   id: number;
   name: string;
   director: string;
-  release: number;
+  release: string;
   description: string;
   rating: number;
-  // watched: boolean;
+  watched: boolean;
 }

@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { Login } from 'src/app/models/login.model';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class LoginPage {
+  loginData: Login;
   constructor(
     private router: Router
   ){}

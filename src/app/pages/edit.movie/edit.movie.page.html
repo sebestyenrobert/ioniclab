@@ -1,4 +1,4 @@
-<app-navbar [pageName]="'Add Movie'"></app-navbar>
+<app-navbar [pageName]="'Edit Movie'"></app-navbar>
 <ion-content>
   <div>
     <form>
@@ -33,6 +33,6 @@
   </div>
 </ion-content>
 <ion-footer>
-  <ion-button expand="block" (click)="addMovie()">Add Movie</ion-button>
+  <ion-button expand="block" (click)="updateMovie(movie)">Save Movie</ion-button>
   <ion-button expand="block" color="secondary" [routerLink]="'/movies'">Back to Movie</ion-button>
 </ion-footer>
